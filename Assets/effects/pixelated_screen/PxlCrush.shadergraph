@@ -854,8 +854,8 @@
     "m_ObjectId": "0ab3233408db4256b53cca931748fedf",
     "m_Title": "Dithering",
     "m_Position": {
-        "x": -2280.999755859375,
-        "y": -360.99951171875
+        "x": -2281.0,
+        "y": -361.0
     }
 }
 
@@ -1844,8 +1844,8 @@
     "m_ObjectId": "4c7c19d62ab64f0c9d1caf98d1b94e09",
     "m_Title": "Quantization",
     "m_Position": {
-        "x": 699.00048828125,
-        "y": -29.99958610534668
+        "x": 699.0,
+        "y": -30.0
     }
 }
 
@@ -2556,7 +2556,7 @@
     "m_ObjectId": "74e900202cf8400b9662f60d000f8e45",
     "m_Title": "Adding Dither to Render",
     "m_Position": {
-        "x": -621.9999389648438,
+        "x": -622.0,
         "y": -14.0
     }
 }
