@@ -29955,6 +29955,10 @@ PrefabInstance:
       value: -58.802
       objectReference: {fileID: 0}
     - target: {fileID: 3413075350171335463, guid: 3175b42900c0e3448b49f923b3ca6662, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413075350171335463, guid: 3175b42900c0e3448b49f923b3ca6662, type: 3}
       propertyPath: field of view
       value: 40
       objectReference: {fileID: 0}
@@ -30010,6 +30014,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4126241811381599980, guid: 3175b42900c0e3448b49f923b3ca6662, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4241738958622070426, guid: 3175b42900c0e3448b49f923b3ca6662, type: 3}
       propertyPath: m_LocalPosition.x
       value: 308.4631
@@ -30052,7 +30060,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3703913463857985211, guid: 3175b42900c0e3448b49f923b3ca6662, type: 3}
       insertIndex: 3
       addedObject: {fileID: 1824271639}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2017780355271734249, guid: 3175b42900c0e3448b49f923b3ca6662, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1673348657}
   m_SourcePrefab: {fileID: 100100000, guid: 3175b42900c0e3448b49f923b3ca6662, type: 3}
 --- !u!1 &172243457
 GameObject:
@@ -200716,6 +200727,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 8762286023885395077, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -211035,6 +211050,11 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 6.25, z: 0.00000047683716}
   m_TimeToStationary: 0.5
+--- !u!108 &1133699584 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1775711785628754643, guid: 3175b42900c0e3448b49f923b3ca6662, type: 3}
+  m_PrefabInstance: {fileID: 172018966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1133974974
 GameObject:
   m_ObjectHideFlags: 0
@@ -212344,6 +212364,7 @@ MonoBehaviour:
   audioFadeDuration: 0.5
   minBreathingPitch: 1
   maxBreathingPitch: 1.8
+  cameraIsLocked: 0
 --- !u!82 &1139882044
 AudioSource:
   m_ObjectHideFlags: 0
@@ -231749,6 +231770,11 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 6.249999, z: 0.00000047683716}
   m_TimeToStationary: 0.5
+--- !u!1 &1244329783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2017780355271734249, guid: 3175b42900c0e3448b49f923b3ca6662, type: 3}
+  m_PrefabInstance: {fileID: 172018966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1244463858
 GameObject:
   m_ObjectHideFlags: 0
@@ -312324,12 +312350,83 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3730549975130182541, guid: 3175b42900c0e3448b49f923b3ca6662, type: 3}
   m_PrefabInstance: {fileID: 172018966}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1244329783}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48578a327e4f55048a241e5cfdaa3591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CandleBehavior
+--- !u!114 &1673348657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244329783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f561b28d34ede1f47bd94c8c49be8b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CandleFlicker
+  flameLight: {fileID: 1133699584}
+  candleBehavior: {fileID: 1673348655}
+  flickerIntensity: 1
+  baseIntensity: 3
+  intensityVariation: 0.2
+  intensitySpeed: 5
+  intensityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  flickerRange: 1
+  baseRange: 3
+  rangeVariation: 1
+  rangeSpeed: 3
+  flickerColor: 1
+  baseColor: {r: 1, g: 0.6, b: 0.2, a: 1}
+  flickerColorVariation: {r: 0.1, g: 0.05, b: 0, a: 1}
+  colorSpeed: 2
+  flickerPosition: 0
+  positionVariation: {x: 0.02, y: 0.03, z: 0.02}
+  positionSpeed: 4
+  usePerlinNoise: 1
+  noiseOffsetX: 0
+  noiseOffsetY: 100
+  noiseOffsetZ: 200
+  noiseOffsetW: 300
+  enableRandomFlickers: 1
+  randomFlickerChance: 0.02
+  randomFlickerIntensityMultiplier: 0.5
+  randomFlickerDuration: 0.1
+  enableWindEffect: 1
+  windStrength: 5
+  windDirection: {x: 1, y: 0, z: 0}
+  windSpeed: 1
+  flameMesh: {fileID: 1934969497}
+  deformSprite: 0
+  scaleVariation: {x: 0, y: 0}
+  scaleSpeed: 8
+  spriteSquashStretch: 0
 --- !u!1 &1673600081
 GameObject:
   m_ObjectHideFlags: 0
@@ -358183,6 +358280,11 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 6.249999, z: 0.00000047683716}
   m_TimeToStationary: 0.5
+--- !u!4 &1934969497 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 693384814302764368, guid: 3175b42900c0e3448b49f923b3ca6662, type: 3}
+  m_PrefabInstance: {fileID: 172018966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1935039112
 GameObject:
   m_ObjectHideFlags: 0
