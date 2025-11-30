@@ -116,6 +116,7 @@ public class AmbientClipsManager : MonoBehaviour
                kb.sKey.isPressed ||
                kb.dKey.isPressed) && !kb.spaceKey.isPressed)
         {
+            print("walking");
             if (startedWalkingSounds)
                 return;
             WalkingAudioSource.clip = scene == "Cabin" ? StepsHut : StepsForest;

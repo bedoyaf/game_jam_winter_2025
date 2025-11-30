@@ -334109,6 +334109,7 @@ MonoBehaviour:
   enemy: {fileID: 8045198579507555001}
   curAmbientAudioSource: {fileID: 274383907}
   curMusicAudioSource: {fileID: 828710364}
+  curWalkingAudioSource: {fileID: 937286523}
   playerSpawnPoints:
   - {fileID: 1351511566}
   - {fileID: 1351511566}
